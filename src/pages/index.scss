@@ -3,7 +3,7 @@
 
 // 3280 x 1080
 :root {
-	--screen-ratio: 0.33333333;
+	--screen-ratio: calc(9 / 16);
 	--color-red: $color-red;
 	--color-blue: $color-blue;
 	--color-yellow: $color-yellow;

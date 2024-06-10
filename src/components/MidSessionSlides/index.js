@@ -15,11 +15,8 @@ import Hotjar from '../../../public/sponsors/hotjar.inline.svg'
 import Littledata from '../../../public/sponsors/littledata.inline.svg'
 import Newrelic from '../../../public/sponsors/newrelic.inline.svg'
 import Oracle from '../../../public/sponsors/oracle.inline.svg'
-import Stately from '../../../public/sponsors/stately.inline.svg'
 import Supercharge from '../../../public/sponsors/supercharge.inline.svg'
-import TalonOne from '../../../public/sponsors/talon-one.inline.svg'
-import ThisDot from '../../../public/sponsors/this-dot.inline.svg'
-import Twilio from '../../../public/sponsors/twilio.inline.svg'
+
 import Wrike from '../../../public/sponsors/wrike.inline.svg'
 import Xata from '../../../public/sponsors/xata.inline.svg'
 
@@ -73,14 +70,14 @@ const MidSessionSlides = ({ stage }) => {
 
   return (
     <div className={classnames('mid-session-slides')}>
-      <div className="sponsors slideshow">
+      {/* <div className="sponsors slideshow">
         <div className="sponsors-top">
           <Wrike className="large" />
           <Genesys className="large" />
           <Oracle className="large" />
         </div>
       </div>
-
+ */}
       {(coffee || lunch) && (
         <div className="slideshow show">
           <h1>{`${coffee ? 'Coffee' : 'Lunch'} break`}</h1>
@@ -102,7 +99,7 @@ const MidSessionSlides = ({ stage }) => {
           </dl>
         </div>
       )}
-      <div className="sponsors slideshow">
+      {/* <div className="sponsors slideshow">
         <div className="sponsors-mid">
           <div className="sponsor-container">
             <h4>Day One Afterparty by</h4>
@@ -119,27 +116,13 @@ const MidSessionSlides = ({ stage }) => {
             <Hasura className="medium" />
           </div>
         </div>
-      </div>
+      </div> */}
       <div className="sponsors slideshow">
         <div className="sponsors-mid">
-          <Xata className="medium" />
-          <Epam className="medium" />
-          <Newrelic className="medium" />
-          <Stately className="medium" />
-          <Exadel className="medium" />
           <Supercharge className="medium" />
-          <Littledata className="medium" />
         </div>
       </div>
-      <div className="sponsors slideshow">
-        <div className="sponsors-bottom">
-          <Hotjar className="small" />
-          <TalonOne className="small" />
-          <ThisDot className="small" />
-          <Twilio className="small" />
-        </div>
-      </div>
-      <div className="slideshow">
+      {/* <div className="slideshow">
         <SponsorSlide image="oracle" />
       </div>
       <div className="slideshow">
@@ -150,10 +133,10 @@ const MidSessionSlides = ({ stage }) => {
       </div>
       <div className="slideshow">
         <SponsorSlide image="stately" />
-      </div>
-      <div className="slideshow logo">
+      </div> */}
+      {/* <div className="slideshow logo">
         <JSLogo />
-      </div>
+      </div> */}
     </div>
   )
 }

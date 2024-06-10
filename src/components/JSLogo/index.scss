@@ -3,10 +3,11 @@
 
 .js-logo {
 
-	height: 50%;
-	transform: translateX(-3%);
+	height: 100%;
+	width: 100%;
+	
 
-	fill: darken($color-purple, 10%);
+	fill: $color-white;
 
 	&.variant-square {
 		.outer {

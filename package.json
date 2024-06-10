@@ -12,8 +12,11 @@
     "format": "npx prettier --write \"src/**/*.js\""
   },
   "dependencies": {
+    "@fontsource-variable/jetbrains-mono": "^5.0.21",
+    "@fontsource-variable/noto-sans-jp": "^5.0.19",
     "@fontsource/noto-sans-jp": "^4.5.0",
     "@fontsource/roboto": "^4.5.7",
+    "@fontsource/shrikhand": "^5.0.20",
     "@fontsource/titillium-web": "^4.5.8",
     "@material-ui/core": "^4.12.1",
     "@material-ui/icons": "^4.11.2",
@@ -48,7 +51,7 @@
     "react-chartkick": "^0.5.1",
     "react-dom": "^17.0.2",
     "react-helmet": "^6.1.0",
-    "socket.io-client": "^4.4.1",
+    "socket.io-client": "^4.7.5",
     "source-map": "^0.7.4"
   },
   "browserslist": [

@@ -24,52 +24,12 @@
 		z-index: 1;
 	}
 
-}
-
-.visual {
-	&.red.presentation-active {
-		background-color: darken($color-red, 25%);
-	}
-	&.green.presentation-active {
-		background-color: darken($color-green, 10%);
-	}
-	&.blue.presentation-active {
-		background-color: darken($color-blue, 10%);
-	}
-	&.yellow.presentation-active {
-		background-color: darken($color-yellow, 10%);
-	}
-	&.white.presentation-active {
-		background-color: $color-white;
-	}
-	&.black.presentation-active  {
-		background-color: $color-black;
-	}
-	&.purple.presentation-active {
-		background-color: darken($color-purple, 15%);
-	}
-	&.orange.presentation-active {
-		background-color: $color-orange;
+	.logo-container {
+		transition: 
+			transform 1s,
+			opacity var(--speaker-text-transition);
 	}
 
-    &.skyblue.presentation-active {
-		background-color: darken($color-skyblue, 0%);
-	}
-    &.macncheese.presentation-active {
-		background-color: darken($color-macncheese, 10%);
-	}
-    &.lilac.presentation-active {
-		background-color: darken($color-lilac, 0%);
-	}
-    &.cyan.presentation-active {
-		background-color: darken($color-cyan, 0%);
-	}
-    &.jazzberry.presentation-active {
-		background-color: darken($color-jazzberry, 0%);
-	}
-    &.heatherblue.presentation-active {
-		background-color: darken($color-heatherblue, 0%);
-	}
 }
 
 .visual div[class^=rectangle-] {
@@ -82,6 +42,56 @@
 }
 
 .visual {
+	.logo-container {
+		position: absolute;
+		z-index: 100;
+		width: 25vw;
+		height: 25vw;
+		top: 0;
+		left: 0;
+		opacity: 1;
+		transform: translate(32%, 20%);
+	}
+
+	.big-rectangle {
+		transition: 
+			opacity .8s, 
+			transform 1s,
+			background-color var(--color-transition);
+		position: absolute;
+		z-index: 10;
+		width: 100vw;
+		height: 100vw;
+		transform-origin: top right;
+		overflow: hidden;
+		
+		top: 0;
+
+		&::after {
+			@keyframes colors {
+				from {
+				/* pushes the sun down past the viewport */
+				transform: translate(-50%, -50%) rotate(10deg);
+				}
+				to {
+				/* returns the sun to its default position */
+				transform: translate(-50%, -50%) rotate(370deg);
+				}
+			}
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%) rotate(10deg);
+			width: 180%;
+			height: 180%;
+			background: linear-gradient(
+				-60deg, $color-neonblue 20%, $color-cyberpurple 50%, $color-neonblue 80%
+			);
+			animation: 20s linear 0s infinite running colors;
+		}
+	}
+
 	.rectangle-left {
 		bottom: 0;
 		transform-origin: bottom right;
@@ -98,57 +108,10 @@
 		background-color: $color-secondarypurple;
 	}
 
-	.rectangle-left {
-		transform: translate(-96%, 4%) rotate(13deg);
-	}
-	.rectangle-right {
-		transform: translate(80%, -64.8%) rotate(13deg);
-	}
-	.rectangle-bottom {
-		transform: translate(50%, 93%) rotate(13deg);
+	.big-rectangle {
+		transform: translate(-80%, 45%) rotate(135deg);
 	}
 
-	&.logo-only {
-		.rectangle-left {
-			transform: translate(-75%, -6%) rotate(-13deg);
-		}
-		.rectangle-right {
-			transform: translate(95%, -19%) rotate(-13deg);
-		}
-		.rectangle-bottom {
-			transform: translate(38%, 102%) rotate(0deg);
-		}
-	}
-
-	&.midsession-slides-active {
-		.rectangle-left {
-			transform: translate(-84%, -4%) rotate(-13deg);
-		}
-		.rectangle-right {
-			transform: translate(107%, -18%) rotate(-13deg);
-		}
-		.rectangle-bottom {
-			transform: translate(38%, 102%) rotate(0deg);
-		}
-	}
-
-	&.presentation-active {
-		.rectangle-left {
-			transform: translate(-100%, 4%) rotate(-26deg);
-		}
-		.rectangle-right {
-			transform: translate(110%, -18%) rotate(0deg);
-		}
-		.rectangle-bottom {
-			background-color: $color-black;
-			transform: translate(4%, 79.4%) rotate(-13deg);
-		}
-	}
-	&.black.presentation-active  {
-		.rectangle-bottom {
-			border: 1px solid  lighten($color-purple, 10%);
-		}
-	}
 }
 
 
@@ -156,14 +119,32 @@
 
 
 .presentation-active {
-	.cluster-2 {
-		transform: translate(-14%,-8%) scale(1.4);
+	.logo-container {
+		transform: translate(32%, -180%);
 	}
-	.cluster-3 {
-		transform: translate(17.3%, 77%) scale(1.2);
+	.big-rectangle {
+		transform: translate(-80%, -10%) rotate(135deg);
+		opacity: 0;
 	}
 }
 
+.logo-only {
+	.logo-container {
+		transform: translate(154%, 30%) scale(1.2);
+	}
+	.big-rectangle {
+		transform: translate(-50%, 50%) rotate(135deg);
+	}
+}
+
+.midsession-slides-active {
+	.logo-container {
+		transform: translate(32%, 110%);
+	}
+	.big-rectangle {
+		transform: translate(-80%, 155%) rotate(135deg);
+	}
+}
 
 
 g[class^=cluster-] path.show {

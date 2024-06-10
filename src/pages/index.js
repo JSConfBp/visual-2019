@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import classnames from 'classnames'
-import io from 'socket.io-client'
+import { io } from 'socket.io-client'
 
 import SpeakerInfo from '../components/SpeakerInfo'
 import JSVisual from '../components/JSVisual'
@@ -21,27 +21,31 @@ const SOCKET_URL = 'https://stage-control.herokuapp.com'
 
 const IndexPage = (props) => {
   const [stage, setStage] = useState(Object.assign({}, emptyStage))
+  const [prevStage, setPrevStage] = useState(Object.assign({}, emptyStage))
   const [centered, setCentered] = useState(true)
   const [debug, setDebug] = useState(false)
 
   let socket
   const init = async () => {
-    const datareq = await fetch(`${SOCKET_URL}/api/stage`)
+    const datareq = await fetch(`${SOCKET_URL}/api/stage/`)
     const data = await datareq.json()
     setStage(data)
+
     socket = io(SOCKET_URL, {
-      path: '/api/socket/',
+      path: '/api/socket',
+      addTrailingSlash: false,
     })
 
     socket.on('update', (data) => {
       console.log('stage update', data)
-      setStage(data)
+      setStage((prev) => {
+        setPrevStage(prev)
+        return data
+      })
     })
   }
 
   useEffect(() => {
-    console.log('useEffect init')
-    
     setDebug(document.location.search.includes('debug'))
     init()
 
@@ -75,6 +79,7 @@ const IndexPage = (props) => {
             logoOnly={stage.logoOnly}
             color={stage.color || 'black'}
             presentation={stage.presentation}
+            endPresentation={prevStage.presentation && !stage.presentation}
           />
         )}
       </div>

@@ -3,12 +3,9 @@
  *
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
-import "@fontsource/titillium-web/300.css"
-import "@fontsource/titillium-web/600.css"
-import "@fontsource/titillium-web/700.css"
-import "@fontsource/roboto/300.css"
-import "@fontsource/roboto/400.css"
-import "@fontsource/roboto/700.css"
+import "@fontsource/shrikhand/400.css"
+import "@fontsource-variable/jetbrains-mono"
+import '@fontsource-variable/noto-sans-jp';
 
  // You can delete this file if you're not using it
 export const onRouteUpdate = ({ location }) => {
