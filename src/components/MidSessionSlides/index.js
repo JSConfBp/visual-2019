@@ -16,6 +16,9 @@ import Littledata from '../../../public/sponsors/littledata.inline.svg'
 import Newrelic from '../../../public/sponsors/newrelic.inline.svg'
 import Oracle from '../../../public/sponsors/oracle.inline.svg'
 import Supercharge from '../../../public/sponsors/supercharge.inline.svg'
+import Risingstack from '../../../public/sponsors/risingstack.inline.svg'
+import CrabNebula from '../../../public/sponsors/crabnebula.inline.svg'
+import CodeCool from '../../../public/sponsors/codecool.inline.svg'
 
 import Wrike from '../../../public/sponsors/wrike.inline.svg'
 import Xata from '../../../public/sponsors/xata.inline.svg'
@@ -70,14 +73,7 @@ const MidSessionSlides = ({ stage }) => {
 
   return (
     <div className={classnames('mid-session-slides')}>
-      {/* <div className="sponsors slideshow">
-        <div className="sponsors-top">
-          <Wrike className="large" />
-          <Genesys className="large" />
-          <Oracle className="large" />
-        </div>
-      </div>
- */}
+
       {(coffee || lunch) && (
         <div className="slideshow show">
           <h1>{`${coffee ? 'Coffee' : 'Lunch'} break`}</h1>
@@ -98,45 +94,26 @@ const MidSessionSlides = ({ stage }) => {
               ))}
           </dl>
         </div>
-      )}
-      {/* <div className="sponsors slideshow">
-        <div className="sponsors-mid">
-          <div className="sponsor-container">
-            <h4>Day One Afterparty by</h4>
-            <Auth0 className="medium" />
-          </div>
+      )} 
 
-          <div className="sponsor-container">
-            <h4>Scholarship Support & Closed Captions by</h4>
-            <Abbyy className="medium" />
-          </div>
-
-          <div className="sponsor-container">
-            <h4>Sketchnotes by</h4>
-            <Hasura className="medium" />
-          </div>
-        </div>
-      </div> */}
       <div className="sponsors slideshow">
         <div className="sponsors-mid">
-          <Supercharge className="medium" />
+          <Risingstack className="large" />
+          <Supercharge className="large" />
+          <CrabNebula className="large" />
         </div>
       </div>
-      {/* <div className="slideshow">
-        <SponsorSlide image="oracle" />
+
+      <div className="sponsors slideshow">
+        <div className="sponsors-bottom">
+        <div className="sponsor-container">
+          <h4>Scholarship Support</h4>
+          <CodeCool className="large" />
+          </div>
+        </div>
       </div>
-      <div className="slideshow">
-        <SponsorSlide image="wrike" />
-      </div>
-      <div className="slideshow">
-        <SponsorSlide image="genesys" />
-      </div>
-      <div className="slideshow">
-        <SponsorSlide image="stately" />
-      </div> */}
-      {/* <div className="slideshow logo">
-        <JSLogo />
-      </div> */}
+
+      
     </div>
   )
 }
