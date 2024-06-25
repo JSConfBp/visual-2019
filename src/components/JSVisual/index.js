@@ -33,7 +33,7 @@ const JSVisual = ({ presentation, color, logoOnly, midSlide }) => {
         <PolygonGreenLine />
       </div>
       <div className="deco-2">
-        <PolygonPurpleLine /> 
+        <PolygonPurpleLine />
       </div>
       <div className="deco-3">
         <PolygonGreenFilled />

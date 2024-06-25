@@ -22,6 +22,7 @@ import CodeCool from '../../../public/sponsors/codecool.inline.svg'
 
 import Wrike from '../../../public/sponsors/wrike.inline.svg'
 import Xata from '../../../public/sponsors/xata.inline.svg'
+import SponsorImage from '../SponsorImage'
 
 const SLIDE_INTERVAL = 10000
 
@@ -73,7 +74,6 @@ const MidSessionSlides = ({ stage }) => {
 
   return (
     <div className={classnames('mid-session-slides')}>
-
       {(coffee || lunch) && (
         <div className="slideshow show">
           <h1>{`${coffee ? 'Coffee' : 'Lunch'} break`}</h1>
@@ -94,7 +94,7 @@ const MidSessionSlides = ({ stage }) => {
               ))}
           </dl>
         </div>
-      )} 
+      )}
 
       <div className="sponsors slideshow">
         <div className="sponsors-mid">
@@ -106,14 +106,14 @@ const MidSessionSlides = ({ stage }) => {
 
       <div className="sponsors slideshow">
         <div className="sponsors-bottom">
-        <div className="sponsor-container">
-          <h4>Scholarship Support</h4>
-          <CodeCool className="large" />
+          <div className="sponsor-container">
+            <SponsorImage image="phonepe" />
+          </div>
+          <div className='sponsor-container' >
+            <CodeCool className="large" />
           </div>
         </div>
       </div>
-
-      
     </div>
   )
 }

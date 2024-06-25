@@ -25,7 +25,10 @@ const SponsorImage = ({ image, className = '' }) => (
     render={(data) => {
       return data.source.edges
         .filter(({ node }) => {
+          if (!node || !node.childImageSharp) return false;
+
           const { src } = node.childImageSharp.fluid
+          
           return src.includes(image)
         })
         .map(({ node }, i) => (

@@ -19,8 +19,8 @@ module.exports = {
     {
       resolve:`gatsby-source-filesystem`,
       options:{
-        name:`sponsor-slides`,
-        path: `${__dirname}/static/sponsor-slide`,
+        name:`sponsors`,
+        path: `${__dirname}/static/sponsors`,
         ignore: [ `**/\.*` ], // ignore files starting with a dot
       }
     },
