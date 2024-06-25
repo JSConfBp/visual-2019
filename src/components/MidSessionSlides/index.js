@@ -109,7 +109,7 @@ const MidSessionSlides = ({ stage }) => {
           <div className="sponsor-container">
             <SponsorImage image="phonepe" />
           </div>
-          <div className='sponsor-container' >
+          <div className="sponsor-container">
             <CodeCool className="large" />
           </div>
         </div>
